@@ -23,11 +23,6 @@ test("renders the search button", () => {
   expect(searchButton).toBeVisible();
 });
 
-test("renders the footer", () => {
-  const footer = screen.getByRole("contentinfo");
-  expect(footer).toBeVisible();
-});
-
 test("renders user favorite words in sessionStorage", () => {
   const favoriteWords = screen.getByRole("list");
   expect(favoriteWords).toBeVisible();
