@@ -8,26 +8,13 @@
   background-color: #f2f2f2;
   border-radius: 5px;
   margin-bottom: 20px;
-
-  button {
-    width: 50px;
-    height: 100%;
-    border: none;
-    border-radius: 5px;
-    background-color: #24292e;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 600;
-    outline: none;
-    cursor: pointer;
-  }
+  box-shadow: 0 0 5px #9c9c9c;
 }
 
 .search-bar-container input {
-  width: 90%;
+  flex: 10;
   height: 100%;
   border: none;
-  border-radius: 5px;
   padding: 0 10px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -39,8 +26,9 @@
 }
 
 .search-bar-container button {
-  width: 10%;
+  flex: 1;
   height: 100%;
+  padding: 10px;
   border: none;
   background-color: #24292e;
   color: #fff;
