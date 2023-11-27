@@ -13,14 +13,16 @@ function Header() {
 
   return (
     <header>
-      <h1>Dictionary</h1>
-      <button className="toggle-mode" onClick={toggleDarkMode}>
-        {isDarkMode ? (
-          <i className="fa-regular fa-sun"></i>
-        ) : (
-          <i className="fa-regular fa-moon"></i>
-        )}
-      </button>
+      <div className="header-content">
+        <h1>Dictionary</h1>
+        <button className="toggle-mode" onClick={toggleDarkMode}>
+          {isDarkMode ? (
+            <i className="fa-regular fa-sun"></i>
+          ) : (
+            <i className="fa-regular fa-moon"></i>
+          )}
+        </button>
+      </div>
     </header>
   );
 }
