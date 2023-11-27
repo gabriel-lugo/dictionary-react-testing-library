@@ -49,12 +49,20 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
               <div key={index} className="definition-item">
                 <p>{definition.definition}</p>
                 {definition.synonyms.length > 0 && (
-                  <p>Synonyms: {definition.synonyms.join(", ")}</p>
+                  <p>
+                    <strong>Synonyms:</strong> {definition.synonyms.join(", ")}
+                  </p>
                 )}
                 {definition.antonyms.length > 0 && (
-                  <p>Antonyms: {definition.antonyms.join(", ")}</p>
+                  <p>
+                    <strong>Antonyms:</strong> {definition.antonyms.join(", ")}
+                  </p>
                 )}
-                {definition.example && <p>Example: {definition.example}</p>}
+                {definition.example && (
+                  <p>
+                    <strong>Example:</strong> {definition.example}
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -63,8 +71,12 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
 
       <div className="license-container">
         <h2>License</h2>
-        <p>Name: {wordData.license.name}</p>
-        <p>URL: {wordData.license.url}</p>
+        <p>
+          <strong>Name:</strong> {wordData.license.name}
+        </p>
+        <p>
+          <strong>URL:</strong> {wordData.license.url}
+        </p>
       </div>
 
       <div className="source-urls-container">
