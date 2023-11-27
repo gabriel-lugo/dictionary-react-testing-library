@@ -1,12 +1,40 @@
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import "../css/SearchBar.css";
 
-function SearchBar() {
+interface SearchBarProps {
+  onSearch: (searchTerm: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearch = () => {
+    onSearch(searchTerm);
+    setSearchTerm("");
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleSearch();
+  };
+
   return (
     <div className="search-bar-container">
-      <input type="text" placeholder="Search..." />
-      <button>Search</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
-}
+};
 
 export default SearchBar;
