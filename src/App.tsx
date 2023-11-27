@@ -33,6 +33,7 @@ function App() {
   const handleSearch = (searchTerm: string) => {
     if (searchTerm.trim() === "") {
       setError("Please enter a word.");
+      setWordData(null);
     } else {
       setError("");
       fetchWordData(searchTerm);
