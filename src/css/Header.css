@@ -1,15 +1,17 @@
 header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  height: 120px;
+  padding: 10px;
   background-color: var(--header-background);
   color: var(--header-text);
   font-size: 1.2rem;
   font-weight: 600;
-  text-transform: uppercase;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: var(--global-margin);
+  margin-right: var(--global-margin);
 }
 
 .toggle-mode {
