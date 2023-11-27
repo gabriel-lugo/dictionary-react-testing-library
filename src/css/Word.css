@@ -1,14 +1,27 @@
+.word-container h2 {
+  margin-bottom: 1rem;
+}
 .phonetics-container,
 .meanings-container,
 .license-container,
 .source-urls-container {
-  margin-bottom: 20px;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--highlight);
 }
 
 .phonetic-item,
 .meaning-item,
 .definition-item {
   margin-bottom: 10px;
+}
+
+.license-container p {
+  margin-bottom: 10px; /* Adjust the margin to increase or decrease space */
+}
+
+.source-urls-container a {
+  margin-bottom: 10px; /* Adjust the margin to increase or decrease space */
 }
 
 a {
