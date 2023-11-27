@@ -1,0 +1,21 @@
+.phonetics-container,
+.meanings-container,
+.license-container,
+.source-urls-container {
+  margin-bottom: 20px;
+}
+
+.phonetic-item,
+.meaning-item,
+.definition-item {
+  margin-bottom: 10px;
+}
+
+a {
+  color: var(--highlight-light);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

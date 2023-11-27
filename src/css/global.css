@@ -1,0 +1,20 @@
+:root {
+  --header-background: #f5f6e6;
+  --header-text: #363952;
+  --header-background-dark: #363952;
+  --header-text-dark: #e8e8e8;
+
+  --background-light: #f5f6e6;
+  --text-light: #363955;
+  --accent-light: #54668e;
+  --secondary-light: #879ec6;
+  --highlight-light: #59598e;
+
+  --background-dark: #363955;
+  --text-dark: #f5f6e6;
+  --accent-dark: #54668e;
+  --secondary-dark: #879ec6;
+  --highlight-dark: #59598e;
+
+  --border-radius: 5px;
+}

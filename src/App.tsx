@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Word from "./components/Word";
+import "./css/global.css";
 
 function App() {
   const [wordData, setWordData] = useState(null);
@@ -30,20 +31,29 @@ function App() {
   };
 
   const handleSearch = (searchTerm: string) => {
-    fetchWordData(searchTerm);
+    if (searchTerm.trim() === "") {
+      setError("Please enter a word.");
+    } else {
+      setError("");
+      fetchWordData(searchTerm);
+    }
   };
 
   return (
     <>
       <Header />
-      <SearchBar onSearch={handleSearch} />
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {wordData ? (
-        <Word wordData={wordData} />
-      ) : (
-        <p>No match found for the search query "{searchQuery}".</p>
-      )}
+      <main>
+        <SearchBar onSearch={handleSearch} />
+        {loading && <p>Loading...</p>}
+        {error && <p>{error}</p>}
+        {!wordData && !loading && searchQuery === "" && (
+          <p>Use the search bar to search for a word.</p>
+        )}
+        {wordData && <Word wordData={wordData} />}
+        {!wordData && searchQuery !== "" && !error && (
+          <p>No match found for "{searchQuery}".</p>
+        )}
+      </main>
     </>
   );
 }

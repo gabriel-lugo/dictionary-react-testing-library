@@ -1,3 +1,6 @@
+import React from "react";
+import "../css/Word.css";
+
 interface WordProps {
   wordData: {
     word: string;
@@ -24,26 +27,26 @@ interface WordProps {
 
 const Word: React.FC<WordProps> = ({ wordData }) => {
   return (
-    <div>
+    <div className="word-container">
       <h1>{wordData.word}</h1>
 
-      <div>
+      <div className="phonetics-container">
         <h2>Phonetics</h2>
         {wordData.phonetics.map((phonetic, index) => (
-          <div key={index}>
+          <div key={index} className="phonetic-item">
             <p>{phonetic.text}</p>
             {phonetic.audio && <audio controls src={phonetic.audio} />}
           </div>
         ))}
       </div>
 
-      <div>
+      <div className="meanings-container">
         <h2>Meanings</h2>
         {wordData.meanings.map((meaning, index) => (
-          <div key={index}>
+          <div key={index} className="meaning-item">
             <h3>{meaning.partOfSpeech}</h3>
             {meaning.definitions.map((definition, index) => (
-              <div key={index}>
+              <div key={index} className="definition-item">
                 <p>{definition.definition}</p>
                 {definition.synonyms.length > 0 && (
                   <p>Synonyms: {definition.synonyms.join(", ")}</p>
@@ -58,13 +61,13 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
         ))}
       </div>
 
-      <div>
+      <div className="license-container">
         <h2>License</h2>
         <p>Name: {wordData.license.name}</p>
         <p>URL: {wordData.license.url}</p>
       </div>
 
-      <div>
+      <div className="source-urls-container">
         <h2>Source URLs</h2>
         {wordData.sourceUrls.map((url, index) => (
           <a key={index} href={url} target="_blank" rel="noopener noreferrer">
