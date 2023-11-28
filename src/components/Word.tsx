@@ -1,31 +1,11 @@
-import React from "react";
+import { WordData } from "../App";
 import "../css/Word.css";
 
 interface WordProps {
-  wordData: {
-    word: string;
-    phonetics: {
-      text: string;
-      audio: string;
-    }[];
-    meanings: {
-      partOfSpeech: string;
-      definitions: {
-        definition: string;
-        synonyms: string[];
-        antonyms: string[];
-        example?: string;
-      }[];
-    }[];
-    license: {
-      name: string;
-      url: string;
-    };
-    sourceUrls: string[];
-  };
+  wordData: WordData;
 }
 
-const Word: React.FC<WordProps> = ({ wordData }) => {
+function Word({ wordData }: WordProps) {
   return (
     <div className="word-container">
       <h1>{wordData.word}</h1>
@@ -34,8 +14,20 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
         <h2>Phonetics</h2>
         {wordData.phonetics.map((phonetic, index) => (
           <div key={index} className="phonetic-item">
-            <p>{phonetic.text}</p>
-            {phonetic.audio && <audio controls src={phonetic.audio} />}
+            {phonetic.sourceUrl ? (
+              <p>
+                <a href={phonetic.sourceUrl} target="_blank">
+                  {phonetic.text}
+                </a>
+              </p>
+            ) : (
+              <p>{phonetic.text}</p>
+            )}
+            {phonetic.audio ? (
+              <audio controls src={phonetic.audio} />
+            ) : (
+              <p className="not-available">No audio available</p>
+            )}
           </div>
         ))}
       </div>
@@ -58,10 +50,12 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
                     <strong>Antonyms:</strong> {definition.antonyms.join(", ")}
                   </p>
                 )}
-                {definition.example && (
+                {definition.example ? (
                   <p>
-                    <strong>Example:</strong> {definition.example}
+                    <strong>Example:</strong> "{definition.example}"
                   </p>
+                ) : (
+                  <p className="not-available">No example available</p>
                 )}
               </div>
             ))}
@@ -69,26 +63,28 @@ const Word: React.FC<WordProps> = ({ wordData }) => {
         ))}
       </div>
 
-      <div className="license-container">
-        <h2>License</h2>
-        <p>
-          <strong>Name:</strong> {wordData.license.name}
-        </p>
-        <p>
-          <strong>URL:</strong> {wordData.license.url}
-        </p>
-      </div>
+      <div className="bottom-container">
+        <div className="source-urls-container">
+          <h3>Source URLs</h3>
+          {wordData.sourceUrls.map((url, index) => (
+            <a key={index} href={url} target="_blank" rel="noopener noreferrer">
+              {url}
+            </a>
+          ))}
+        </div>
 
-      <div className="source-urls-container">
-        <h2>Source URLs</h2>
-        {wordData.sourceUrls.map((url, index) => (
-          <a key={index} href={url} target="_blank" rel="noopener noreferrer">
-            {url}
-          </a>
-        ))}
+        <div className="license-container">
+          <h3>License</h3>
+          <p>
+            <strong>Name:</strong> {wordData.license.name}
+          </p>
+          <p>
+            <strong>URL:</strong> {wordData.license.url}
+          </p>
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default Word;
