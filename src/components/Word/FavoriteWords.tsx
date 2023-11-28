@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
-import { WordData } from "../App";
+import { WordData } from "../../App";
 
 interface FavoriteWordsProps {
   favoriteWords: string[];
   onSelectWord: (selectedWordData: WordData | null) => void;
 }
 
-const FavoriteWords: React.FC<FavoriteWordsProps> = ({
-  favoriteWords,
-  onSelectWord,
-}) => {
+function FavoriteWords({ favoriteWords, onSelectWord }: FavoriteWordsProps) {
   const [wordsData, setWordsData] = useState<WordData[]>([]);
 
   useEffect(() => {
@@ -37,6 +34,6 @@ const FavoriteWords: React.FC<FavoriteWordsProps> = ({
       )}
     </div>
   );
-};
+}
 
 export default FavoriteWords;

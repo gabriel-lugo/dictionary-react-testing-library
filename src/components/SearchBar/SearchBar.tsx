@@ -1,11 +1,11 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
-import "../css/SearchBar.css";
+import { ChangeEvent, FormEvent, useState } from "react";
+import "../../css/SearchBar.css";
 
 interface SearchBarProps {
   onSearch: (searchTerm: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+function SearchBar({ onSearch }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -35,6 +35,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       </form>
     </div>
   );
-};
+}
 
 export default SearchBar;

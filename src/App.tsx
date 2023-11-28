@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import Word from "./components/Word";
+import Header from "./components/Header/Header";
+import SearchBar from "./components/SearchBar/SearchBar";
+import Word from "./components/Word/Word";
 import "./css/global.css";
 
 export interface WordData {
