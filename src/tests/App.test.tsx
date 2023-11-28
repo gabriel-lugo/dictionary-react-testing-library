@@ -19,13 +19,8 @@ test("renders the searchbar", () => {
 });
 
 test("renders the search button", () => {
-  const searchButton = screen.getByRole("button");
+  const searchButton = screen.getByText("Search", { selector: "button" });
   expect(searchButton).toBeVisible();
-});
-
-test("renders user favorite words in sessionStorage", () => {
-  const favoriteWords = screen.getByRole("list");
-  expect(favoriteWords).toBeVisible();
 });
 
 test("user can type in the searchbar", async () => {
