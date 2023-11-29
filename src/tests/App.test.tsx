@@ -70,19 +70,33 @@ it("should display an error message if the user searches for an empty string", a
   });
 });
 
+it("should display 'No example available' if the word has no example", async () => {
+  await performSearch("hello");
+
+  const exampleElement = screen.getByText("No example available", {
+    selector: ".not-available",
+  });
+
+  expect(exampleElement).toBeVisible();
+});
+
 it("should allow the user to play audio if present", async () => {
   await performSearch("hello");
 
   const audioElement = document.querySelector("audio");
 
   expect(audioElement).toBeInTheDocument();
+});
 
-  if (audioElement) {
-    userEvent.click(audioElement);
-    expect(audioElement).toHaveAttribute("controls");
-  } else {
-    console.warn("No audio element found.");
-  }
+it("should display 'No audio available' if the word has no audio", async () => {
+  await performSearch("fantabulous");
+  const audioElement = document.querySelector("audio");
+  const noAudioMessage = screen.getByText("No audio available", {
+    selector: ".not-available",
+  });
+
+  expect(audioElement).not.toBeInTheDocument();
+  expect(noAudioMessage).toBeVisible();
 });
 
 it("should toggle dark mode", async () => {
