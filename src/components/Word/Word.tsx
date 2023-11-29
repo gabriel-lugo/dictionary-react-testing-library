@@ -1,5 +1,5 @@
-import { WordData } from "../../App";
 import "../../css/Word.css";
+import { WordData } from "../../types/types";
 import LicenseContainer from "./LicenseContainer";
 import MeaningItem from "./MeaningItem";
 import PhoneticsItem from "./PhoneticsItem";

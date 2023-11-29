@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { WordData } from "../../App";
+import { WordData } from "../../types/types";
 
 interface FavoriteWordsProps {
   favoriteWords: string[];
