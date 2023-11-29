@@ -15,7 +15,11 @@ function Header() {
     <header>
       <div className="header-content">
         <h1>Dictionary</h1>
-        <button className="toggle-mode" onClick={toggleDarkMode}>
+        <button
+          className="toggle-mode"
+          onClick={toggleDarkMode}
+          title="Toggle Dark or Light Mode"
+        >
           {isDarkMode ? (
             <i className="fa-regular fa-sun"></i>
           ) : (
