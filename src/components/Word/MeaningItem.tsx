@@ -9,10 +9,12 @@ interface MeaningItemProps {
 }
 
 function MeaningItem({ partOfSpeech, definitions }: MeaningItemProps) {
+  const slicedDefinitions = definitions.slice(0, 5);
+
   return (
     <div className="meaning-item">
       <h3>{partOfSpeech}</h3>
-      {definitions.map((definition, index) => (
+      {slicedDefinitions.map((definition, index) => (
         <div key={index} className="definition-item">
           <p>{definition.definition}</p>
           {definition.synonyms.length > 0 && (
