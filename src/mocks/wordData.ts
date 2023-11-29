@@ -70,7 +70,7 @@ const wordData: WordData[] = [
     phonetics: [
       {
         text: "/fænˈtæbjʊləs/",
-        audio: "https://example.com/fantabulous-audio.mp3",
+        audio: "",
         sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=123456",
         license: {
           name: "CC BY 3.0",
