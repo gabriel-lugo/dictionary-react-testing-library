@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "../../css/Word.css";
 import { WordData } from "../../types/types";
+import { saveWord, useSavedStatus } from "../../utils/saveWords";
 import LicenseContainer from "./LicenseContainer";
 import MeaningItem from "./MeaningItem";
 import PhoneticsItem from "./PhoneticsItem";
@@ -11,24 +13,37 @@ interface WordProps {
 }
 
 function Word({ wordData }: WordProps) {
+  const [isSaved, setIsSaved] = useState(false);
+
+  useSavedStatus(wordData, setIsSaved);
+
+  const handleSaveClick = () => {
+    if (!isSaved) {
+      const saved = saveWord(wordData, setIsSaved);
+      if (saved) {
+        setIsSaved(true);
+      }
+    }
+  };
+
   return (
     <div className="word-container">
       <WordHeader word={wordData.word} />
-
+      <button onClick={handleSaveClick} disabled={isSaved}>
+        {isSaved ? "Saved" : "Save"}
+      </button>
       <div className="phonetics-container">
         <h2>Phonetics</h2>
         {wordData.phonetics.map((phonetic, index) => (
           <PhoneticsItem key={index} {...phonetic} />
         ))}
       </div>
-
       <div className="meanings-container">
         <h2>Meanings</h2>
         {wordData.meanings.map((meaning, index) => (
           <MeaningItem key={index} {...meaning} />
         ))}
       </div>
-
       <div className="bottom-container">
         <SourceUrlsContainer sourceUrls={wordData.sourceUrls} />
         <LicenseContainer

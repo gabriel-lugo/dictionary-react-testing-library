@@ -10,6 +10,22 @@
   margin-bottom: 0.5rem;
 }
 
+.word-container button {
+  background-color: var(--highlight);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.word-container button:disabled {
+  background-color: lightgray;
+  cursor: auto;
+}
+
 .not-available {
   font-style: italic;
   font-size: small;
