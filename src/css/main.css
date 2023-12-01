@@ -8,6 +8,18 @@
 main {
   margin-left: var(--global-margin);
   margin-right: var(--global-margin);
+
+  h1 {
+    font-size: var(--font-size-h1);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+  }
 }
 
 :root {

@@ -42,11 +42,6 @@
   border-bottom: 1px solid var(--highlight);
 }
 
-.source-urls-container,
-.license-container {
-  font-size: 0.8rem; /* Adjust the font size as needed */
-}
-
 .bottom-container {
   display: flex;
   flex-direction: column;
@@ -80,6 +75,6 @@ a:hover {
 
   .bottom-container > div {
     flex: 1;
-    margin-bottom: 0; /* No margin between columns on larger screens */
+    margin-bottom: 0;
   }
 }

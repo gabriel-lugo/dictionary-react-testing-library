@@ -1,4 +1,3 @@
-// FavoriteWords.tsx
 import { useCurrentWord } from "../../contexts/CurrentWordContext";
 import { useFavoriteWords } from "../../contexts/FavoriteWordsContext";
 import "../../css/FavoriteWords.css";

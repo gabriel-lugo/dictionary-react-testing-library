@@ -1,11 +1,11 @@
-/* FavoriteWords.css */
 .favorite-words-container {
+  /* width: 30%; */
   margin-top: 20px;
 }
 
 .favorite-words-heading {
   font-size: 1.5em;
-  color: #333;
+  margin-bottom: 1rem;
 }
 
 .favorite-words-list {
@@ -15,12 +15,20 @@
 
 .favorite-words-item {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--highlight);
+  border-radius: var(--border-radius);
+  padding: 10px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  padding-right: 10px;
+  max-width: 400px;
 }
 
 .clickable-word {
   cursor: pointer;
+  font-size: 1.2em;
+  flex-grow: 1;
 }
 
 .remove-button {
@@ -29,8 +37,9 @@
   border: none;
   border-radius: var(--border-radius);
   padding: 5px 10px;
-  margin-left: 10px;
   cursor: pointer;
+  flex-shrink: 0; /* Ensure the button does not shrink */
+  margin-left: 5px; /* Adjust the margin as needed */
 }
 
 .no-favorites-message {
