@@ -1,4 +1,3 @@
-// CurrentWordContext.tsx
 import { createContext, ReactNode, useContext, useState } from "react";
 import { WordData } from "../types/types";
 

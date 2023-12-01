@@ -1,5 +1,4 @@
 .favorite-words-container {
-  /* width: 30%; */
   margin-top: 20px;
 }
 
@@ -38,11 +37,10 @@
   border-radius: var(--border-radius);
   padding: 5px 10px;
   cursor: pointer;
-  flex-shrink: 0; /* Ensure the button does not shrink */
-  margin-left: 5px; /* Adjust the margin as needed */
+  flex-shrink: 0;
+  margin-left: 5px;
 }
 
 .no-favorites-message {
-  color: #555;
   font-style: italic;
 }
