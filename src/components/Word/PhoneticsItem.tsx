@@ -17,7 +17,7 @@ function PhoneticsItem({ text, sourceUrl, audio }: PhoneticsItemProps) {
         <p>{text}</p>
       )}
       {audio ? (
-        <audio controls src={audio} />
+        <audio controls src={audio} title="audio example" />
       ) : (
         <p className="not-available">No audio available</p>
       )}

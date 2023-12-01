@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useFavoriteWords } from "../../contexts/FavoriteWordsContext";
 import "../../css/Word.css";
 import { WordData } from "../../types/types";
-import { saveWord, useSavedStatus } from "../../utils/saveWords";
 import LicenseContainer from "./LicenseContainer";
 import MeaningItem from "./MeaningItem";
 import PhoneticsItem from "./PhoneticsItem";
@@ -14,15 +14,19 @@ interface WordProps {
 
 function Word({ wordData }: WordProps) {
   const [isSaved, setIsSaved] = useState(false);
+  const { favoriteWords, addFavoriteWord } = useFavoriteWords();
 
-  useSavedStatus(wordData, setIsSaved);
+  useEffect(() => {
+    const isAlreadySaved =
+      Array.isArray(favoriteWords) &&
+      favoriteWords.some((savedWord) => savedWord.word === wordData.word);
+    setIsSaved(isAlreadySaved);
+  }, [wordData.word, favoriteWords]);
 
   const handleSaveClick = () => {
     if (!isSaved) {
-      const saved = saveWord(wordData, setIsSaved);
-      if (saved) {
-        setIsSaved(true);
-      }
+      addFavoriteWord(wordData);
+      setIsSaved(true);
     }
   };
 
