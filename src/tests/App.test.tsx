@@ -7,6 +7,7 @@ import { FavoriteWordsProvider } from "../contexts/FavoriteWordsContext";
 
 const user = userEvent.setup();
 
+// Render App with the context providers for each test
 const setupApp = () => {
   render(
     <React.StrictMode>
@@ -19,6 +20,7 @@ const setupApp = () => {
   );
 };
 
+// Custom function to perform a search and wait for the result
 const performSearch = async (word: string) => {
   const searchBar = screen.getByRole("textbox");
 

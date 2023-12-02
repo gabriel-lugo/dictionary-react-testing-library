@@ -5,8 +5,9 @@ export const useWordDataApi = () => {
   const [wordData, setWordDataState] = useState<WordData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setErrorState] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
+  // Fetches word data from the dictionary API and sets the word data, loading, and error states
   const fetchWordData = async (word: string) => {
     try {
       setLoading(true);
@@ -16,12 +17,12 @@ export const useWordDataApi = () => {
       const data = await response.json();
       setWordDataState(data[0]);
       setErrorState("");
-      setSearchQuery(word);
+      setSearchTerm(word);
     } catch (error) {
       console.error("Error fetching word data:", error);
       setWordDataState(null);
       setErrorState("Error fetching word data. Please try again.");
-      setSearchQuery(word);
+      setSearchTerm(word);
     } finally {
       setLoading(false);
     }
@@ -39,7 +40,7 @@ export const useWordDataApi = () => {
     wordData,
     loading,
     error,
-    searchQuery,
+    searchTerm,
     fetchWordData,
     setError,
     setWordData,

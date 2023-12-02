@@ -14,8 +14,11 @@ interface WordProps {
 
 function Word({ wordData }: WordProps) {
   const [isSaved, setIsSaved] = useState(false);
+
+  // Custom hook to manage favorite words
   const { favoriteWords, addFavoriteWord } = useFavoriteWords();
 
+  // Effect to update 'isSaved' when favoriteWords or wordData.word changes
   useEffect(() => {
     const isAlreadySaved =
       Array.isArray(favoriteWords) &&
@@ -23,6 +26,7 @@ function Word({ wordData }: WordProps) {
     setIsSaved(isAlreadySaved);
   }, [wordData.word, favoriteWords]);
 
+  // Handler for saving a word to favorite words
   const handleSaveClick = () => {
     if (!isSaved) {
       addFavoriteWord(wordData);

@@ -13,7 +13,7 @@ function App() {
     wordData,
     loading,
     error,
-    searchQuery,
+    searchTerm,
     fetchWordData,
     setError,
     setWordData,
@@ -25,7 +25,7 @@ function App() {
   // Handling the search functionality
   async function handleSearch(searchTerm: string) {
     if (searchTerm.trim() === "") {
-      // Displaying an error if the search term is empty
+      // Displaying an error if the search term is an empty string
       setError("Please enter a word.");
       setWordData(null);
     } else {
@@ -43,7 +43,7 @@ function App() {
         <SearchBar onSearch={handleSearch} />
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
-        {!wordData && !loading && searchQuery === "" && (
+        {!wordData && !loading && searchTerm === "" && (
           <p>Use the search bar to search for a word.</p>
         )}
         {currentWord ? (
@@ -51,8 +51,8 @@ function App() {
         ) : (
           <>
             {wordData && <Word wordData={wordData} />}
-            {!wordData && searchQuery !== "" && !error && (
-              <p>No match found for "{searchQuery}".</p>
+            {!wordData && searchTerm !== "" && !error && (
+              <p>No match found for "{searchTerm}".</p>
             )}
           </>
         )}

@@ -7,10 +7,12 @@ function FavoriteWords() {
   const { favoriteWords, removeFavoriteWord } = useFavoriteWords();
   const { setWord } = useCurrentWord();
 
+  // Handler for removing a word from favorite words
   const handleRemoveClick = (word: WordData) => {
     removeFavoriteWord(word);
   };
 
+  // Handler for clicking a word and displaying it in the Word component
   const handleWordClick = (word: WordData) => {
     setWord(word);
   };

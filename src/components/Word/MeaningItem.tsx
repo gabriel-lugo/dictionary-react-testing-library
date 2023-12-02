@@ -9,6 +9,7 @@ interface MeaningItemProps {
 }
 
 function MeaningItem({ partOfSpeech, definitions }: MeaningItemProps) {
+  // Only show the first 5 definitions
   const slicedDefinitions = definitions.slice(0, 5);
 
   return (

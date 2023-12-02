@@ -16,12 +16,15 @@ interface CurrentWordProviderProps {
 }
 
 export function CurrentWordProvider({ children }: CurrentWordProviderProps) {
+  // State to manage the current word
   const [currentWord, setCurrentWord] = useState<WordData | null>(null);
 
+  // Handler for setting the current word
   const setWord = (word: WordData | null) => {
     setCurrentWord(word);
   };
 
+  // Handler for resetting the current word
   const resetWord = () => {
     setCurrentWord(null);
   };

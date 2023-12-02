@@ -24,15 +24,18 @@ interface FavoriteWordsProviderProps {
 export function FavoriteWordsProvider({
   children,
 }: FavoriteWordsProviderProps) {
+  // State to manage favorite words from sessionStorage
   const [favoriteWords, setFavoriteWords] = useState<WordData[]>(() => {
     const savedWordsString = sessionStorage.getItem("favoriteWords");
     return savedWordsString ? JSON.parse(savedWordsString) : [];
   });
 
+  // Handler for adding a word to favorite words
   const addFavoriteWord = (word: WordData) => {
     setFavoriteWords((prevWords) => [...prevWords, word]);
   };
 
+  // Handler for removing a word from favorite words
   const removeFavoriteWord = (word: WordData) => {
     setFavoriteWords((prevWords) =>
       prevWords.filter((favWord) => favWord.word !== word.word)

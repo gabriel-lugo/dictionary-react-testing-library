@@ -6,17 +6,21 @@ interface SearchBarProps {
 }
 
 function SearchBar({ onSearch }: SearchBarProps) {
+  // Using state to manage the search term
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Handler for updating the search term
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
+  // Handler for submitting the search term
   const handleSearch = () => {
     onSearch(searchTerm);
     setSearchTerm("");
   };
 
+  // Handler for submitting the form
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleSearch();

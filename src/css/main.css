@@ -22,6 +22,7 @@ main {
   }
 }
 
+/* Global color theme */
 :root {
   --background: var(--background-light);
   --text: var(--text-light);
@@ -30,6 +31,7 @@ main {
   --highlight: var(--highlight-light);
 }
 
+/* Dark theme colors */
 :root[data-theme="dark"] {
   --background: var(--background-dark);
   --text: var(--text-dark);
