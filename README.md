@@ -1,3 +1,7 @@
+# Inlämningsuppgift Arbetsmetodik för utvecklare
+
+I denna inlämningsuppgift har jag skapat en ordbok där användare kan söka efter ord med hjälp av Free Dictionary API (https://dictionaryapi.dev/). Appen är också testad med React Testing Library, och API-svaren mockas i testerna med Mock Service Worker.
+
 ## Features
 
 ### G
@@ -12,7 +16,7 @@
 
 ### VG
 
-- [ ] Användare ska kunna spara sina "favoritord" i en session. Dessa ska finnas tillgängliga i en lista för användaren att se. Från listan ska man kunna se det sparade svaret från API. Man ska även kunna ta bort sina favoritord.
+- [x] Användare ska kunna spara sina "favoritord" i en session. Dessa ska finnas tillgängliga i en lista för användaren att se. Från listan ska man kunna se det sparade svaret från API. Man ska även kunna ta bort sina favoritord.
 
 - [x] Byta mellan dark och light theme.
 
@@ -20,22 +24,22 @@
 
 ### G
 
-- [ ] Appen innehåller enhetstester och/eller integrationstester som säkerställer att koden huvudsakligen fungerar som den ska.
+- [x] Appen innehåller enhetstester och/eller integrationstester som säkerställer att koden huvudsakligen fungerar som den ska.
 
 ### VG
 
-- [ ] Appen innehåller väl valda enhetstester och/eller integrationstester som säkerställer att koden i hög utsträckning fungerar som den ska.
+- [x] Appen innehåller väl valda enhetstester och/eller integrationstester som säkerställer att koden i hög utsträckning fungerar som den ska.
 
-- [ ] Eleven resonerar väl kring sitt val av tester och testningsmetodik.
+- [x] Eleven resonerar väl kring sitt val av tester och testningsmetodik.
 
 ## Övrigt
 
 ### G
 
-- [ ] Applikationen har en användarvänlig design.
+- [x] Applikationen har en användarvänlig design.
 
-- [ ] Koden ska vara väl kommenterad.
+- [x] Koden ska vara väl kommenterad.
 
 ### VG
 
-- [ ] Koden är väl skriven och har en bra struktur.
+- [x] Koden är väl skriven och har en bra struktur.
