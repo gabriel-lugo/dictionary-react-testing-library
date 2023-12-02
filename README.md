@@ -1,6 +1,6 @@
 # Inlämningsuppgift Arbetsmetodik för utvecklare
 
-I denna inlämningsuppgift har jag skapat en ordbok där användare kan söka efter ord med hjälp av Free Dictionary API (https://dictionaryapi.dev/). Appen är också testad med React Testing Library, och API-svaren mockas i testerna med Mock Service Worker.
+I denna inlämningsuppgift har jag skapat en ordbok där användare kan söka efter ord med hjälp av [Free Dictionary API](https://dictionaryapi.dev/). Appen är också testad med React Testing Library, och API-svaren mockas i testerna med Mock Service Worker.
 
 Du kan prova appen live [här](https://dictionary-rtl.netlify.app/)
 
